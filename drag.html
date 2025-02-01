@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f1f1f1;
+        }
+
+        .counters {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .counter {
+            font-size: 150px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="counters">
+        <h2>project complete</h2>
+
+        <span class="counter">40</span>
+
+    </div>
+    <script>
+        const counterEl = document.querySelector('.counter');
+        let counterNumber = 0;
+
+        const updateCounter = setInterval(function () {
+            counterNumber++;
+            counterEl.textContent = counterNumber;
+            if (counterNumber >= 40) {
+                clearInterval(updateCounter);
+            }
+        }, 1)
+    </script>
+</body>
+
+</html>

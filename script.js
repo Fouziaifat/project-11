@@ -27,3 +27,27 @@ window.addEventListener("scroll", () => {
     headerPage.classList.remove("scrolled"); // Remove 'scrolled' class when at the top
   }
 });
+
+// counter
+document.querySelectorAll(".counter").forEach((counterEl) => {
+  const target = +counterEl.dataset.num; // Get target number
+  const duration = +counterEl.dataset.time; // Get total duration
+  let count = 0;
+  const step = Math.ceil(duration / target); // Calculate step time
+
+  const updateCounter = setInterval(() => {
+    counterEl.textContent = ++count;
+    if (count >= target) clearInterval(updateCounter);
+  }, step);
+});
+
+// const counterEl = document.querySelector(".counter");
+// let counterNumber = 0;
+
+// const updateCounter = setInterval(function () {
+//   counterNumber++;
+//   counterEl.textContent = counterNumber;
+//   if (counterNumber >= 40) {
+//     clearInterval(updateCounter);
+//   }
+// }, 1);
